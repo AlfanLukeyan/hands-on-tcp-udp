@@ -4,8 +4,8 @@
 Alfan Lukeyan Rizki - 5025211046
 
 ## Contents
-- [TCP Segment](#tcp-segement)
-- [UDP Segment](#tcp-segement)
+- [TCP Segment](#TCP-Segment)
+- [UDP Segment](#UDP-Segment)
 
 ## TCP Segment
 ### Requirements
@@ -76,3 +76,33 @@ the data transfer part of the TCP connection.
     - If the data is doubled, the acking segment for each segment is received, for example in the second segment the data is doubled from `1448` to `2896 bytes`
 
 11. What is the throughput (bytes transferred per unit time) for the TCP connection? Explain how you calculated this value.
+
+## UDP Segment
+### Requirements
+
+1.  Select the first UDP segment in your trace. What is the packet number4 of this segment in the trace file? What type of application-layer payload or protocol message is being carried in this UDP segment? Look at the details of this packet in Wireshark. How many fields there are in the UDP header? (You shouldn’t look in the textbook! Answer these questions directly from what you observe in the packet trace.) What are the names of these fields?
+    
+    ![udp-soal-1](<img/Screenshot 2023-10-17 at 12.14.22.png>)
+    -   Packet number : `5`
+    -   `SSDP` (Simple Service Discovery Protocol)
+    -  ` 4 field`, source port, destination port, length, dan checksum
+
+2.  What is the length (in bytes) of each of the UDP header fields?
+    - Each field is `2 bytes` in size so the total is `8 bytes` because the header has 4 fields
+
+3.  The value in the Length field is the length of what?
+    - The length field is the total length of the UDP segment which includes the header and payload4. In the image above, the length value of `283 bytes` is obtained from the header (`8 bytes`) plus payload (`275 bytes`)
+
+4.  What is the maximum number of bytes that can be included in a UDP payload?
+    - UDP has a 16-bit field which has a maximum length of `65,535 bytes`, but because there is a header (`8 bytes`) the maximum length is `65,527 bytes`
+
+5.  What is the largest possible source port number?
+    - `65535`, because the port is represented with 16 bits so the possible numbers are between 0 to 65535 (2^16 - 1)
+
+6.  What is the protocol number for UDP?
+    - `17`
+
+7.  What is the packet number of the first of these two UDP segments in the trace file? What is the packet number of the second of these two UDP segments in the trace file? Describe the relationship between the port numbers in the two packets
+    - `15`
+    - `17`
+    - The source port for packet 15 is the destination port for packet 17 and it can be applied in the opposite.
