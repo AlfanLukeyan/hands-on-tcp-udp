@@ -100,7 +100,8 @@ the data transfer part of the TCP connection.
     - `65535`, because the port is represented with 16 bits so the possible numbers are between 0 to 65535 (2^16 - 1)
 
 6.  What is the protocol number for UDP?
-    - `17`
+    ![udp-soal-6](<img/Screenshot 2023-10-17 at 12.22.04.png>)
+    - the protocol number for udp is `17`
 
 7.  What is the packet number of the first of these two UDP segments in the trace file? What is the packet number of the second of these two UDP segments in the trace file? Describe the relationship between the port numbers in the two packets
     - `15`
